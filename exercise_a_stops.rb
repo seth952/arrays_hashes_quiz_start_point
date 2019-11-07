@@ -1,9 +1,9 @@
 stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket" ]
 
 
- 
+
 # 1. Add `"Edinburgh Waverley"` to the end of the array
-stop.push("Edinburgh Waverly")
+stops.push("Edinburgh Waverly")
 p stops
 # 2. Add `"Glasgow Queen St"` to the start of the array
  stops.unshift('Glasgow Queen St')
@@ -18,13 +18,17 @@ p stops.index("Linlithgow")
  stops.delete("Livingston")
 p stops
 # 6. Delete `"Cumbernauld"` from the array by index
-#stops.delete_at(1)
+stops.delete_at(1)
  p stops
 # 7. How many stops there are in the array?
 p stops.count()
 
 # 8. How many ways can we return `"Falkirk High"` from the array?
 p stops[2]
+p stops.at(2)
+p stops[-5]
+p stops.values_at(2).first()#brings back array
+p stops.fetch(2)
 
 # 9. Reverse the positions of the stops in the array
 p stops.reverse()

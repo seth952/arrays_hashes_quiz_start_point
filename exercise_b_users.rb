@@ -63,10 +63,16 @@ p users["Erik"][:lottery_numbers]
 # 4. Get the type of Avril's pet Monty
 p users["Avril"][:pets][0][:species]
 # 5. Get the smallest of Erik's lottery numbers
-p users["Erik"][:lottery_numbers].min
+p users["Erik"][:lottery_numbers].min #.sort
 # 6. Return an array of Avril's lottery numbers that are even
- users["Avril"][:lottery_numbers]
- if numbers.even
+ lottery_avril = users["Avril"][:lottery_numbers]
+ even_numbers = []#store even number in array empty
+ for number in lottery_numbers
+   if (number.even)
+     even_numbers.push(number)
+   end
+ end
+
 
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
 p users["Erik"][:lottery_numbers] << 7
@@ -79,21 +85,23 @@ p users
 
 
 # 9. Add a pet dog to Erik called "Fluffy"
- users["Erik"][:pets][4] = [name:"Fluffy",
- species:"dog"]
+ # users["Erik"][:pets][4] = [name:"Fluffy",
+ # species:"dog"]
+ # p users
+
+ users["Erik"][:pets].push({name:"Fluffy",
+ species:"dog"})
  p users
 
 # 10. Add another person to the users hash
- users = Hash.new("Stephen") #=> {
-#   twitter: "nil",
-#   lottery_numbers: [25, 30, 3, 11, 42, 1],
-#   home_town: "Glasgow",
-#   pets: [
-#         {
-#           name: "Dougal",
-#           species: "Dug"
-#         }
-#       ]
-# )
 
-p "Stephen"
+
+
+new person = {
+  twitter: "fah",
+  lottery_numbers: [1,2,3,4,5],
+  home_town: "Glasgow",
+  pets: [{name: "blue", species: "cat"}]
+
+  }
+users["Stephen"] = new_person
